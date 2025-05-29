@@ -14,7 +14,7 @@ This tool visualizes hop-by-hop latency across IPSec and GRE tunnels using trace
 2. Run `analyzer.py`
 3. View/save graphs from `plots/`
 
-## Future Additions
+## Future Additions (Coming Soon)
 
 - Support for JSON/Nmap trace formats
 - Alerts for hop spikes
