@@ -16,6 +16,10 @@ This project is part of an ongoing learning initiative to bridge **network autom
 
 ---
 
+
+![Sample Output](plots/Figure_1.png)
+
+
 ##  Folder Structure
 
 protocol-latency-analyzer/
@@ -59,4 +63,4 @@ The output graph will:
 
     Be saved as: plots/latency_plot.png
 
-![Sample Output](plots/Figure_1.png)
+
