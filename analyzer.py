@@ -1,7 +1,12 @@
 import re
 import matplotlib.pyplot as plt
+import os
 
 def parse_traceroute(file_path):
+    if not os.path.isfile(file_path):
+        print(f"File not found: {file_path}")
+        return []
+
     with open(file_path, 'r') as f:
         lines = f.readlines()
 
@@ -14,6 +19,10 @@ def parse_traceroute(file_path):
     return hops
 
 def plot_latency(hops, label):
+    if not hops:
+        print("No latency data to plot.")
+        return
+
     plt.plot(range(1, len(hops)+1), hops, marker='o', label=label)
     plt.xlabel("Hop Number")
     plt.ylabel("Latency (ms)")
@@ -21,12 +30,23 @@ def plot_latency(hops, label):
     plt.grid(True)
 
 if __name__ == "__main__":
-    gre_latency = parse_traceroute("traceroute_samples/tunnel_trace_gre.txt")
-    ipsec_latency = parse_traceroute("traceroute_samples/tunnel_trace_linux.txt")
+    print("Hey! Welcome to Protocol Latency Analyzer")
 
-    plot_latency(gre_latency, label="GRE Tunnel")
-    plot_latency(ipsec_latency, label="IPSec Tunnel")
+    # Ask user for file path
+    file_path = input("Enter path to traceroute output file: ").strip()
 
-    plt.legend()
-    plt.savefig("plots/latency_plot.png")
-    plt.show()
+    # Ask user for label
+    label = input("Enter label for the plot (e.g., 'GRE Tunnel'): ").strip()
+
+    # Parse and plot
+    hops = parse_traceroute(file_path)
+    plot_latency(hops, label)
+
+    if hops:
+        # Create output directory if not exists
+        os.makedirs("plots", exist_ok=True)
+        output_file = "plots/latency_plot.png"
+        plt.legend()
+        plt.savefig(output_file)
+        plt.show()
+        print(f"Plot saved as: {output_file}")
