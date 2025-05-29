@@ -1,4 +1,4 @@
-# 🧪 Protocol Latency Analyzer
+#  Protocol Latency Analyzer
 
 A Python-based hands-on tool that analyzes and visualizes hop-by-hop latency from traceroute data — built to study and simulate GRE, IPSec, and other tunneling behaviors in secure network environments.
 
@@ -6,7 +6,7 @@ This project is part of an ongoing learning initiative to bridge **network autom
 
 ---
 
-## 🚀 What This Project Does
+##  What This Project Does
 
 - Accepts traceroute output (`.txt`) from Linux
 - Extracts average latency for each hop
@@ -16,7 +16,7 @@ This project is part of an ongoing learning initiative to bridge **network autom
 
 ---
 
-## 📁 Folder Structure
+##  Folder Structure
 
 protocol-latency-analyzer/
 ├── analyzer.py # Main Python script
@@ -30,7 +30,7 @@ protocol-latency-analyzer/
 
 ---
 
-## 💻 How to Use
+##  How to Use
 
 ### Step 1 – Install dependencies
 
@@ -59,3 +59,4 @@ The output graph will:
 
     Be saved as: plots/latency_plot.png
 
+![Sample Output](plots/Figure_1.png)
