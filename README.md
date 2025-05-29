@@ -36,16 +36,19 @@ protocol-latency-analyzer/
 
 ##  How to Use
 
-### Step 1 – Install dependencies
+### Install dependencies
 
 Make sure you are inside your virtual environment (`venv` activated):
 
 ```bash
 pip install -r requirements.txt
 
-## Collect traceroute data
+---
+
+### Collect traceroute data
 traceroute google.com > traceroute_samples/tunnel_trace_linux.txt
 
+---
 
 ## Run the analyzer
 python analyzer.py
@@ -62,5 +65,5 @@ The output graph will:
     Display on screen
 
     Be saved as: plots/latency_plot.png
-
+---
 
